@@ -23,3 +23,7 @@ print(wsd.disambiguate("I am interested in the interest rates at the bank.", pro
 # If synsets=True, lemmas are replaced with the Synsets to which they belong
 # If synsets=False (default False), to access a lemma's synset, call lemma.synset()
 ```
+
+## References
+
+* Zhong, Zhi and Ng, Hwee Tou. 2010. It Makes Sense: A Wide-Coverage Word Sense Disambiguation System for Free Text. In Proceedings of the ACL 2010 System Demonstrations, pages 78--83, Uppsala, Sweden
