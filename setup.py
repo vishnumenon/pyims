@@ -1,9 +1,8 @@
-from setuptools import setup
-
+import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-setup(name="pyims",
+setuptools.setup(name="pyims",
     version='0.1',
     description='A python wrapper for the IMS Word Sense Disambiguation tool (Zhong and Ng, 2010)',
     url='http://github.com/vishnumenon/pyims',
