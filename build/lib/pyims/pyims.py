@@ -1,6 +1,7 @@
 import subprocess
 import os
 import xml.etree.ElementTree as ET
+import nltk
 from nltk.corpus import wordnet as wn
 from nltk import word_tokenize
 
@@ -18,10 +19,16 @@ class PyIMS():
         for sense in senses:
             k, v = sense.split("|")
             v = float(v)
-            k = wn.lemma_from_key(k)
-            if find_synsets:
+            try:
+                k = wn.lemma_from_key(k)
+            except nltk.corpus.reader.wordnet.WordNetError:
+                k = None
+            if find_synsets and k is not None:
                 k = k.synset()
-            senses_dist[k] = float(v)
+            if k in senses_dist:
+                senses_dist[k] += float(v)
+            else:
+                senses_dist[k] = float(v)
         return senses_dist
 
 
